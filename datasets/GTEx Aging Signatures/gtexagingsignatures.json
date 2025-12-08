@@ -1,0 +1,2278 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "rai": "http://mlcommons.org/croissant/RAI/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "examples": {
+            "@id": "cr:examples",
+            "@type": "@json"
+        },
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "samplingRate": "cr:samplingRate",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "name": "GTEx Tissue-Specific Aging Signatures",
+    "description": "Tissue-specific aging signatures createed from GTEx RNA-seq gene expression profiles",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "citeAs": "@article{GTEx Consortium, Science, 2020, title={The GTEx Consortium atlas of genetic regulatory effects across hman tissues}, author={GTEx Consortium}, journal={Science}, year={2020}, volume={369}, pages={1318-1330}}",
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "GTEx",
+        "url": "https://gtexportal.org/home/"
+    },
+    "datePublished": "2024-12-06 00:00:00",
+    "license": "https://gtexportal.org/home/license",
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Ma'ayan Lab",
+        "url": "https://maayanlab.cloud/"
+    },
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/GTEx+Tissue-Specific+Aging+Signatures",
+    "version": "0.1.0",
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table-archive",
+            "name": "dataset-attribute-table-archive",
+            "description": "Dataset attribute table archive from Harmonizome.",
+            "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/gtexagingsignatures/gene_attribute_matrix_standardized.txt.gz",
+            "encodingFormat": "application/zip",
+            "sha256": "4468693a685ba04020fcc100fbe68bd3f9191c3d71b923800d4944cc64b5800e"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table",
+            "name": "dataset-attribute-table",
+            "description": "Dataset attribute table from Harmonizome.",
+            "containedIn": {
+                "@id": "dataset-attribute-table-archive"
+            },
+            "contentUrl": "gene_attribute_matrix.txt",
+            "encodingFormat": "text/tab-separated-values"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "associations",
+            "name": "associations",
+            "key": {
+                "@id": "associations/gene"
+            },
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/gene",
+                    "name": "gene",
+                    "description": "The NCBI gene symbol",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Text",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "gene_symbol"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdiposeTissue_20-29_vs_30-39",
+                    "name": "associations/GTEx AdiposeTissue 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdiposeTissue 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdiposeTissue_20-29_vs_40-49",
+                    "name": "associations/GTEx AdiposeTissue 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdiposeTissue 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdiposeTissue_20-29_vs_50-59",
+                    "name": "associations/GTEx AdiposeTissue 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdiposeTissue 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdiposeTissue_20-29_vs_60-69",
+                    "name": "associations/GTEx AdiposeTissue 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdiposeTissue 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdiposeTissue_20-29_vs_70-79",
+                    "name": "associations/GTEx AdiposeTissue 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdiposeTissue 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdrenalGland_20-29_vs_30-39",
+                    "name": "associations/GTEx AdrenalGland 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdrenalGland 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdrenalGland_20-29_vs_40-49",
+                    "name": "associations/GTEx AdrenalGland 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdrenalGland 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdrenalGland_20-29_vs_50-59",
+                    "name": "associations/GTEx AdrenalGland 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdrenalGland 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdrenalGland_20-29_vs_60-69",
+                    "name": "associations/GTEx AdrenalGland 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdrenalGland 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_AdrenalGland_20-29_vs_70-79",
+                    "name": "associations/GTEx AdrenalGland 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx AdrenalGland 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Bladder_20-29_vs_40-49",
+                    "name": "associations/GTEx Bladder 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Bladder 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Bladder_20-29_vs_50-59",
+                    "name": "associations/GTEx Bladder 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Bladder 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Blood_20-29_vs_30-39",
+                    "name": "associations/GTEx Blood 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Blood 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Blood_20-29_vs_40-49",
+                    "name": "associations/GTEx Blood 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Blood 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Blood_20-29_vs_50-59",
+                    "name": "associations/GTEx Blood 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Blood 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Blood_20-29_vs_60-69",
+                    "name": "associations/GTEx Blood 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Blood 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Blood_20-29_vs_70-79",
+                    "name": "associations/GTEx Blood 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Blood 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_BloodVessel_20-29_vs_30-39",
+                    "name": "associations/GTEx BloodVessel 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx BloodVessel 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_BloodVessel_20-29_vs_40-49",
+                    "name": "associations/GTEx BloodVessel 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx BloodVessel 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_BloodVessel_20-29_vs_50-59",
+                    "name": "associations/GTEx BloodVessel 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx BloodVessel 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_BloodVessel_20-29_vs_60-69",
+                    "name": "associations/GTEx BloodVessel 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx BloodVessel 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_BloodVessel_20-29_vs_70-79",
+                    "name": "associations/GTEx BloodVessel 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx BloodVessel 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Brain_20-29_vs_30-39",
+                    "name": "associations/GTEx Brain 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Brain 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Brain_20-29_vs_40-49",
+                    "name": "associations/GTEx Brain 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Brain 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Brain_20-29_vs_50-59",
+                    "name": "associations/GTEx Brain 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Brain 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Brain_20-29_vs_60-69",
+                    "name": "associations/GTEx Brain 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Brain 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Brain_20-29_vs_70-79",
+                    "name": "associations/GTEx Brain 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Brain 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Breast_20-29_vs_30-39",
+                    "name": "associations/GTEx Breast 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Breast 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Breast_20-29_vs_40-49",
+                    "name": "associations/GTEx Breast 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Breast 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Breast_20-29_vs_50-59",
+                    "name": "associations/GTEx Breast 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Breast 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Breast_20-29_vs_60-69",
+                    "name": "associations/GTEx Breast 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Breast 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Breast_20-29_vs_70-79",
+                    "name": "associations/GTEx Breast 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Breast 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Colon_20-29_vs_30-39",
+                    "name": "associations/GTEx Colon 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Colon 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Colon_20-29_vs_40-49",
+                    "name": "associations/GTEx Colon 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Colon 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Colon_20-29_vs_50-59",
+                    "name": "associations/GTEx Colon 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Colon 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Colon_20-29_vs_60-69",
+                    "name": "associations/GTEx Colon 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Colon 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Colon_20-29_vs_70-79",
+                    "name": "associations/GTEx Colon 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Colon 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Esophagus_20-29_vs_30-39",
+                    "name": "associations/GTEx Esophagus 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Esophagus 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Esophagus_20-29_vs_40-49",
+                    "name": "associations/GTEx Esophagus 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Esophagus 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Esophagus_20-29_vs_50-59",
+                    "name": "associations/GTEx Esophagus 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Esophagus 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Esophagus_20-29_vs_60-69",
+                    "name": "associations/GTEx Esophagus 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Esophagus 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Esophagus_20-29_vs_70-79",
+                    "name": "associations/GTEx Esophagus 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Esophagus 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Heart_20-29_vs_30-39",
+                    "name": "associations/GTEx Heart 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Heart 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Heart_20-29_vs_40-49",
+                    "name": "associations/GTEx Heart 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Heart 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Heart_20-29_vs_50-59",
+                    "name": "associations/GTEx Heart 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Heart 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Heart_20-29_vs_60-69",
+                    "name": "associations/GTEx Heart 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Heart 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Heart_20-29_vs_70-79",
+                    "name": "associations/GTEx Heart 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Heart 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Kidney_20-29_vs_30-39",
+                    "name": "associations/GTEx Kidney 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Kidney 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Kidney_20-29_vs_40-49",
+                    "name": "associations/GTEx Kidney 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Kidney 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Kidney_20-29_vs_50-59",
+                    "name": "associations/GTEx Kidney 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Kidney 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Kidney_20-29_vs_60-69",
+                    "name": "associations/GTEx Kidney 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Kidney 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Kidney_20-29_vs_70-79",
+                    "name": "associations/GTEx Kidney 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Kidney 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Liver_20-29_vs_30-39",
+                    "name": "associations/GTEx Liver 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Liver 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Liver_20-29_vs_40-49",
+                    "name": "associations/GTEx Liver 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Liver 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Liver_20-29_vs_50-59",
+                    "name": "associations/GTEx Liver 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Liver 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Liver_20-29_vs_60-69",
+                    "name": "associations/GTEx Liver 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Liver 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Liver_20-29_vs_70-79",
+                    "name": "associations/GTEx Liver 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Liver 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Lung_20-29_vs_30-39",
+                    "name": "associations/GTEx Lung 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Lung 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Lung_20-29_vs_40-49",
+                    "name": "associations/GTEx Lung 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Lung 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Lung_20-29_vs_50-59",
+                    "name": "associations/GTEx Lung 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Lung 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Lung_20-29_vs_60-69",
+                    "name": "associations/GTEx Lung 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Lung 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Lung_20-29_vs_70-79",
+                    "name": "associations/GTEx Lung 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Lung 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Muscle_20-29_vs_30-39",
+                    "name": "associations/GTEx Muscle 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Muscle 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Muscle_20-29_vs_40-49",
+                    "name": "associations/GTEx Muscle 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Muscle 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Muscle_20-29_vs_50-59",
+                    "name": "associations/GTEx Muscle 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Muscle 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Muscle_20-29_vs_60-69",
+                    "name": "associations/GTEx Muscle 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Muscle 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Muscle_20-29_vs_70-79",
+                    "name": "associations/GTEx Muscle 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Muscle 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Nerve_20-29_vs_30-39",
+                    "name": "associations/GTEx Nerve 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Nerve 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Nerve_20-29_vs_40-49",
+                    "name": "associations/GTEx Nerve 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Nerve 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Nerve_20-29_vs_50-59",
+                    "name": "associations/GTEx Nerve 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Nerve 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Nerve_20-29_vs_60-69",
+                    "name": "associations/GTEx Nerve 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Nerve 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Nerve_20-29_vs_70-79",
+                    "name": "associations/GTEx Nerve 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Nerve 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Ovary_20-29_vs_30-39",
+                    "name": "associations/GTEx Ovary 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Ovary 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Ovary_20-29_vs_40-49",
+                    "name": "associations/GTEx Ovary 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Ovary 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Ovary_20-29_vs_50-59",
+                    "name": "associations/GTEx Ovary 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Ovary 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Ovary_20-29_vs_60-69",
+                    "name": "associations/GTEx Ovary 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Ovary 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Ovary_20-29_vs_70-79",
+                    "name": "associations/GTEx Ovary 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Ovary 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pancreas_20-29_vs_30-39",
+                    "name": "associations/GTEx Pancreas 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pancreas 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pancreas_20-29_vs_40-49",
+                    "name": "associations/GTEx Pancreas 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pancreas 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pancreas_20-29_vs_50-59",
+                    "name": "associations/GTEx Pancreas 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pancreas 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pancreas_20-29_vs_60-69",
+                    "name": "associations/GTEx Pancreas 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pancreas 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pancreas_20-29_vs_70-79",
+                    "name": "associations/GTEx Pancreas 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pancreas 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pituitary_20-29_vs_30-39",
+                    "name": "associations/GTEx Pituitary 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pituitary 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pituitary_20-29_vs_40-49",
+                    "name": "associations/GTEx Pituitary 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pituitary 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pituitary_20-29_vs_50-59",
+                    "name": "associations/GTEx Pituitary 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pituitary 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pituitary_20-29_vs_60-69",
+                    "name": "associations/GTEx Pituitary 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pituitary 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Pituitary_20-29_vs_70-79",
+                    "name": "associations/GTEx Pituitary 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Pituitary 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Prostate_20-29_vs_30-39",
+                    "name": "associations/GTEx Prostate 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Prostate 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Prostate_20-29_vs_40-49",
+                    "name": "associations/GTEx Prostate 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Prostate 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Prostate_20-29_vs_50-59",
+                    "name": "associations/GTEx Prostate 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Prostate 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Prostate_20-29_vs_60-69",
+                    "name": "associations/GTEx Prostate 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Prostate 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Prostate_20-29_vs_70-79",
+                    "name": "associations/GTEx Prostate 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Prostate 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SalivaryGland_20-29_vs_30-39",
+                    "name": "associations/GTEx SalivaryGland 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SalivaryGland 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SalivaryGland_20-29_vs_40-49",
+                    "name": "associations/GTEx SalivaryGland 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SalivaryGland 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SalivaryGland_20-29_vs_50-59",
+                    "name": "associations/GTEx SalivaryGland 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SalivaryGland 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SalivaryGland_20-29_vs_60-69",
+                    "name": "associations/GTEx SalivaryGland 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SalivaryGland 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Skin_20-29_vs_30-39",
+                    "name": "associations/GTEx Skin 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Skin 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Skin_20-29_vs_40-49",
+                    "name": "associations/GTEx Skin 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Skin 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Skin_20-29_vs_50-59",
+                    "name": "associations/GTEx Skin 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Skin 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Skin_20-29_vs_60-69",
+                    "name": "associations/GTEx Skin 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Skin 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Skin_20-29_vs_70-79",
+                    "name": "associations/GTEx Skin 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Skin 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SmallIntestine_20-29_vs_30-39",
+                    "name": "associations/GTEx SmallIntestine 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SmallIntestine 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SmallIntestine_20-29_vs_40-49",
+                    "name": "associations/GTEx SmallIntestine 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SmallIntestine 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SmallIntestine_20-29_vs_50-59",
+                    "name": "associations/GTEx SmallIntestine 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SmallIntestine 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SmallIntestine_20-29_vs_60-69",
+                    "name": "associations/GTEx SmallIntestine 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SmallIntestine 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_SmallIntestine_20-29_vs_70-79",
+                    "name": "associations/GTEx SmallIntestine 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx SmallIntestine 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Spleen_20-29_vs_30-39",
+                    "name": "associations/GTEx Spleen 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Spleen 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Spleen_20-29_vs_40-49",
+                    "name": "associations/GTEx Spleen 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Spleen 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Spleen_20-29_vs_50-59",
+                    "name": "associations/GTEx Spleen 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Spleen 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Spleen_20-29_vs_60-69",
+                    "name": "associations/GTEx Spleen 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Spleen 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Spleen_20-29_vs_70-79",
+                    "name": "associations/GTEx Spleen 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Spleen 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Stomach_20-29_vs_30-39",
+                    "name": "associations/GTEx Stomach 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Stomach 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Stomach_20-29_vs_40-49",
+                    "name": "associations/GTEx Stomach 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Stomach 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Stomach_20-29_vs_50-59",
+                    "name": "associations/GTEx Stomach 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Stomach 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Stomach_20-29_vs_60-69",
+                    "name": "associations/GTEx Stomach 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Stomach 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Stomach_20-29_vs_70-79",
+                    "name": "associations/GTEx Stomach 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Stomach 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Testis_20-29_vs_30-39",
+                    "name": "associations/GTEx Testis 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Testis 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Testis_20-29_vs_40-49",
+                    "name": "associations/GTEx Testis 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Testis 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Testis_20-29_vs_50-59",
+                    "name": "associations/GTEx Testis 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Testis 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Testis_20-29_vs_60-69",
+                    "name": "associations/GTEx Testis 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Testis 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Testis_20-29_vs_70-79",
+                    "name": "associations/GTEx Testis 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Testis 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Thyroid_20-29_vs_30-39",
+                    "name": "associations/GTEx Thyroid 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Thyroid 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Thyroid_20-29_vs_40-49",
+                    "name": "associations/GTEx Thyroid 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Thyroid 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Thyroid_20-29_vs_50-59",
+                    "name": "associations/GTEx Thyroid 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Thyroid 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Thyroid_20-29_vs_60-69",
+                    "name": "associations/GTEx Thyroid 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Thyroid 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Thyroid_20-29_vs_70-79",
+                    "name": "associations/GTEx Thyroid 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Thyroid 20-29 vs 70-79"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Uterus_20-29_vs_30-39",
+                    "name": "associations/GTEx Uterus 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Uterus 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Uterus_20-29_vs_40-49",
+                    "name": "associations/GTEx Uterus 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Uterus 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Uterus_20-29_vs_50-59",
+                    "name": "associations/GTEx Uterus 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Uterus 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Uterus_20-29_vs_60-69",
+                    "name": "associations/GTEx Uterus 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Uterus 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Vagina_20-29_vs_30-39",
+                    "name": "associations/GTEx Vagina 20-29 vs 30-39",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Vagina 20-29 vs 30-39"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Vagina_20-29_vs_40-49",
+                    "name": "associations/GTEx Vagina 20-29 vs 40-49",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Vagina 20-29 vs 40-49"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Vagina_20-29_vs_50-59",
+                    "name": "associations/GTEx Vagina 20-29 vs 50-59",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Vagina 20-29 vs 50-59"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Vagina_20-29_vs_60-69",
+                    "name": "associations/GTEx Vagina 20-29 vs 60-69",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Vagina 20-29 vs 60-69"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GTEx_Vagina_20-29_vs_70-79",
+                    "name": "associations/GTEx Vagina 20-29 vs 70-79",
+                    "cr:arrayShape": "13519",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GTEx Vagina 20-29 vs 70-79"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
