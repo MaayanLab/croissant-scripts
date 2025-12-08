@@ -1,0 +1,2694 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "rai": "http://mlcommons.org/croissant/RAI/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "examples": {
+            "@id": "cr:examples",
+            "@type": "@json"
+        },
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "samplingRate": "cr:samplingRate",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "name": "MoTrPAC Rat Endurance Exercise Training",
+    "description": "RNA-seq gene expression profiles for rat tissue samples across 4 time points and 19 tissues",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "citeAs": "@article{Sanford, Cell, 2020, title={Molecular Transducers of Physical Activity Consortium (MoTrPAC): Mapping the Dynamic Responses to Exercise}, author={Sanford, JA}, journal={Cell}, year={2020}, volume={181}, pages={1464-1474}}",
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "MoTrPAC",
+        "url": "https://motrpac-data.org/"
+    },
+    "datePublished": "2024-07-09 00:00:00",
+    "license": "http://creativecommons.org/licenses/by-nc-sa/4.0",
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Ma'ayan Lab",
+        "url": "https://maayanlab.cloud/"
+    },
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/MoTrPAC+Rat+Endurance+Exercise+Training",
+    "version": "0.1.0",
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table-archive",
+            "name": "dataset-attribute-table-archive",
+            "description": "Dataset attribute table archive from Harmonizome.",
+            "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/motrpac/gene_attribute_matrix_standardized.txt.zip",
+            "encodingFormat": "application/zip",
+            "sha256": "5c10578a05e3b3bb1dc065dda65f12b5305dce2d766c5fa09db4df615df1c0a8"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table",
+            "name": "dataset-attribute-table",
+            "description": "Dataset attribute table from Harmonizome.",
+            "containedIn": {
+                "@id": "dataset-attribute-table-archive"
+            },
+            "contentUrl": "gene_attribute_matrix.txt",
+            "encodingFormat": "text/tab-separated-values"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "associations",
+            "name": "associations",
+            "key": {
+                "@id": "associations/gene"
+            },
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/gene",
+                    "name": "gene",
+                    "description": "The NCBI gene symbol",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Text",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "gene"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_consensus",
+                    "name": "associations/t30-blood-rna_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_female_1w",
+                    "name": "associations/t30-blood-rna_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_female_2w",
+                    "name": "associations/t30-blood-rna_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_female_4w",
+                    "name": "associations/t30-blood-rna_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_female_8w",
+                    "name": "associations/t30-blood-rna_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_male_1w",
+                    "name": "associations/t30-blood-rna_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_male_2w",
+                    "name": "associations/t30-blood-rna_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_male_4w",
+                    "name": "associations/t30-blood-rna_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t30-blood-rna_male_8w",
+                    "name": "associations/t30-blood-rna_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t30-blood-rna_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_consensus",
+                    "name": "associations/t52-hippocampus_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_female_1w",
+                    "name": "associations/t52-hippocampus_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_female_2w",
+                    "name": "associations/t52-hippocampus_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_female_4w",
+                    "name": "associations/t52-hippocampus_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_female_8w",
+                    "name": "associations/t52-hippocampus_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_male_1w",
+                    "name": "associations/t52-hippocampus_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_male_2w",
+                    "name": "associations/t52-hippocampus_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_male_4w",
+                    "name": "associations/t52-hippocampus_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t52-hippocampus_male_8w",
+                    "name": "associations/t52-hippocampus_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t52-hippocampus_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_consensus",
+                    "name": "associations/t53-cortex_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_female_1w",
+                    "name": "associations/t53-cortex_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_female_2w",
+                    "name": "associations/t53-cortex_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_female_4w",
+                    "name": "associations/t53-cortex_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_female_8w",
+                    "name": "associations/t53-cortex_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_male_1w",
+                    "name": "associations/t53-cortex_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_male_2w",
+                    "name": "associations/t53-cortex_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_male_4w",
+                    "name": "associations/t53-cortex_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t53-cortex_male_8w",
+                    "name": "associations/t53-cortex_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t53-cortex_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_consensus",
+                    "name": "associations/t54-hypothalamus_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_female_1w",
+                    "name": "associations/t54-hypothalamus_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_female_2w",
+                    "name": "associations/t54-hypothalamus_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_female_4w",
+                    "name": "associations/t54-hypothalamus_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_female_8w",
+                    "name": "associations/t54-hypothalamus_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_male_1w",
+                    "name": "associations/t54-hypothalamus_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_male_2w",
+                    "name": "associations/t54-hypothalamus_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_male_4w",
+                    "name": "associations/t54-hypothalamus_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t54-hypothalamus_male_8w",
+                    "name": "associations/t54-hypothalamus_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t54-hypothalamus_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_consensus",
+                    "name": "associations/t55-gastrocnemius_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_female_1w",
+                    "name": "associations/t55-gastrocnemius_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_female_2w",
+                    "name": "associations/t55-gastrocnemius_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_female_4w",
+                    "name": "associations/t55-gastrocnemius_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_female_8w",
+                    "name": "associations/t55-gastrocnemius_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_male_1w",
+                    "name": "associations/t55-gastrocnemius_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_male_2w",
+                    "name": "associations/t55-gastrocnemius_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_male_4w",
+                    "name": "associations/t55-gastrocnemius_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t55-gastrocnemius_male_8w",
+                    "name": "associations/t55-gastrocnemius_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t55-gastrocnemius_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_consensus",
+                    "name": "associations/t56-vastus-lateralis_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_female_1w",
+                    "name": "associations/t56-vastus-lateralis_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_female_2w",
+                    "name": "associations/t56-vastus-lateralis_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_female_4w",
+                    "name": "associations/t56-vastus-lateralis_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_female_8w",
+                    "name": "associations/t56-vastus-lateralis_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_male_1w",
+                    "name": "associations/t56-vastus-lateralis_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_male_2w",
+                    "name": "associations/t56-vastus-lateralis_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_male_4w",
+                    "name": "associations/t56-vastus-lateralis_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t56-vastus-lateralis_male_8w",
+                    "name": "associations/t56-vastus-lateralis_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t56-vastus-lateralis_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_consensus",
+                    "name": "associations/t58-heart_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_female_1w",
+                    "name": "associations/t58-heart_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_female_2w",
+                    "name": "associations/t58-heart_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_female_4w",
+                    "name": "associations/t58-heart_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_female_8w",
+                    "name": "associations/t58-heart_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_male_1w",
+                    "name": "associations/t58-heart_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_male_2w",
+                    "name": "associations/t58-heart_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_male_4w",
+                    "name": "associations/t58-heart_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t58-heart_male_8w",
+                    "name": "associations/t58-heart_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t58-heart_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_consensus",
+                    "name": "associations/t59-kidney_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_female_1w",
+                    "name": "associations/t59-kidney_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_female_2w",
+                    "name": "associations/t59-kidney_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_female_4w",
+                    "name": "associations/t59-kidney_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_female_8w",
+                    "name": "associations/t59-kidney_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_male_1w",
+                    "name": "associations/t59-kidney_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_male_2w",
+                    "name": "associations/t59-kidney_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_male_4w",
+                    "name": "associations/t59-kidney_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t59-kidney_male_8w",
+                    "name": "associations/t59-kidney_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t59-kidney_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_consensus",
+                    "name": "associations/t60-adrenal_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_female_1w",
+                    "name": "associations/t60-adrenal_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_female_2w",
+                    "name": "associations/t60-adrenal_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_female_4w",
+                    "name": "associations/t60-adrenal_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_female_8w",
+                    "name": "associations/t60-adrenal_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_male_1w",
+                    "name": "associations/t60-adrenal_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_male_2w",
+                    "name": "associations/t60-adrenal_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_male_4w",
+                    "name": "associations/t60-adrenal_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t60-adrenal_male_8w",
+                    "name": "associations/t60-adrenal_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t60-adrenal_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_consensus",
+                    "name": "associations/t61-colon_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_female_1w",
+                    "name": "associations/t61-colon_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_female_2w",
+                    "name": "associations/t61-colon_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_female_4w",
+                    "name": "associations/t61-colon_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_female_8w",
+                    "name": "associations/t61-colon_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_male_1w",
+                    "name": "associations/t61-colon_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_male_2w",
+                    "name": "associations/t61-colon_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_male_4w",
+                    "name": "associations/t61-colon_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t61-colon_male_8w",
+                    "name": "associations/t61-colon_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t61-colon_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_consensus",
+                    "name": "associations/t62-spleen_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_female_1w",
+                    "name": "associations/t62-spleen_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_female_2w",
+                    "name": "associations/t62-spleen_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_female_4w",
+                    "name": "associations/t62-spleen_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_female_8w",
+                    "name": "associations/t62-spleen_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_male_1w",
+                    "name": "associations/t62-spleen_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_male_2w",
+                    "name": "associations/t62-spleen_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_male_4w",
+                    "name": "associations/t62-spleen_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t62-spleen_male_8w",
+                    "name": "associations/t62-spleen_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t62-spleen_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t63-testes_consensus",
+                    "name": "associations/t63-testes_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t63-testes_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t63-testes_male_1w",
+                    "name": "associations/t63-testes_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t63-testes_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t63-testes_male_2w",
+                    "name": "associations/t63-testes_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t63-testes_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t63-testes_male_4w",
+                    "name": "associations/t63-testes_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t63-testes_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t63-testes_male_8w",
+                    "name": "associations/t63-testes_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t63-testes_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t64-ovaries_consensus",
+                    "name": "associations/t64-ovaries_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t64-ovaries_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t64-ovaries_female_1w",
+                    "name": "associations/t64-ovaries_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t64-ovaries_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t64-ovaries_female_2w",
+                    "name": "associations/t64-ovaries_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t64-ovaries_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t64-ovaries_female_4w",
+                    "name": "associations/t64-ovaries_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t64-ovaries_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t64-ovaries_female_8w",
+                    "name": "associations/t64-ovaries_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t64-ovaries_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_consensus",
+                    "name": "associations/t66-lung_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_female_1w",
+                    "name": "associations/t66-lung_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_female_2w",
+                    "name": "associations/t66-lung_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_female_4w",
+                    "name": "associations/t66-lung_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_female_8w",
+                    "name": "associations/t66-lung_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_male_1w",
+                    "name": "associations/t66-lung_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_male_2w",
+                    "name": "associations/t66-lung_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_male_4w",
+                    "name": "associations/t66-lung_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t66-lung_male_8w",
+                    "name": "associations/t66-lung_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t66-lung_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_consensus",
+                    "name": "associations/t67-small-intestine_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_female_1w",
+                    "name": "associations/t67-small-intestine_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_female_2w",
+                    "name": "associations/t67-small-intestine_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_female_4w",
+                    "name": "associations/t67-small-intestine_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_female_8w",
+                    "name": "associations/t67-small-intestine_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_male_1w",
+                    "name": "associations/t67-small-intestine_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_male_2w",
+                    "name": "associations/t67-small-intestine_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_male_4w",
+                    "name": "associations/t67-small-intestine_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t67-small-intestine_male_8w",
+                    "name": "associations/t67-small-intestine_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t67-small-intestine_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_consensus",
+                    "name": "associations/t68-liver_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_female_1w",
+                    "name": "associations/t68-liver_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_female_2w",
+                    "name": "associations/t68-liver_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_female_4w",
+                    "name": "associations/t68-liver_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_female_8w",
+                    "name": "associations/t68-liver_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_male_1w",
+                    "name": "associations/t68-liver_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_male_2w",
+                    "name": "associations/t68-liver_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_male_4w",
+                    "name": "associations/t68-liver_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t68-liver_male_8w",
+                    "name": "associations/t68-liver_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t68-liver_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_consensus",
+                    "name": "associations/t69-brown-adipose_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_female_1w",
+                    "name": "associations/t69-brown-adipose_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_female_2w",
+                    "name": "associations/t69-brown-adipose_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_female_4w",
+                    "name": "associations/t69-brown-adipose_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_female_8w",
+                    "name": "associations/t69-brown-adipose_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_male_1w",
+                    "name": "associations/t69-brown-adipose_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_male_2w",
+                    "name": "associations/t69-brown-adipose_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_male_4w",
+                    "name": "associations/t69-brown-adipose_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t69-brown-adipose_male_8w",
+                    "name": "associations/t69-brown-adipose_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t69-brown-adipose_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_consensus",
+                    "name": "associations/t70-white-adipose_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_female_1w",
+                    "name": "associations/t70-white-adipose_female_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_female_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_female_2w",
+                    "name": "associations/t70-white-adipose_female_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_female_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_female_4w",
+                    "name": "associations/t70-white-adipose_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_female_8w",
+                    "name": "associations/t70-white-adipose_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_male_1w",
+                    "name": "associations/t70-white-adipose_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_male_2w",
+                    "name": "associations/t70-white-adipose_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_male_4w",
+                    "name": "associations/t70-white-adipose_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t70-white-adipose_male_8w",
+                    "name": "associations/t70-white-adipose_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t70-white-adipose_male_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_consensus",
+                    "name": "associations/t99-vena-cava_consensus",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_consensus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_female_4w",
+                    "name": "associations/t99-vena-cava_female_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_female_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_female_8w",
+                    "name": "associations/t99-vena-cava_female_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_female_8w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_male_1w",
+                    "name": "associations/t99-vena-cava_male_1w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_male_1w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_male_2w",
+                    "name": "associations/t99-vena-cava_male_2w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_male_2w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_male_4w",
+                    "name": "associations/t99-vena-cava_male_4w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_male_4w"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/t99-vena-cava_male_8w",
+                    "name": "associations/t99-vena-cava_male_8w",
+                    "cr:arrayShape": "15363",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "t99-vena-cava_male_8w"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
