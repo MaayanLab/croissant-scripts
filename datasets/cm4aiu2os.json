@@ -1,0 +1,4454 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "rai": "http://mlcommons.org/croissant/RAI/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "examples": {
+            "@id": "cr:examples",
+            "@type": "@json"
+        },
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "samplingRate": "cr:samplingRate",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "name": "CM4AI U2OS Cell Map Protein Localization Assemblies",
+    "description": "Protein localization assemblies constructed from integrating AP-MS biomolecular interaction and IF imaging data",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "citeAs": "@article{Schaffer, Nature, 2025, title={Multimodal cell maps as a foundation for structural and functional genomics}, author={Schafffer, LV}, journal={Nature}, year={2025}, volume={642}, pages={222\u2013231}}",
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "Cell Maps for AI",
+        "url": "https://cm4ai.org/"
+    },
+    "datePublished": "2025-09-29 00:00:00",
+    "license": "http://creativecommons.org/licenses/by-nc-sa/4.0",
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Ma'ayan Lab",
+        "url": "https://maayanlab.cloud/"
+    },
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/CM4AI+U2OS+Cell+Map+Protein+Localization+Assemblies",
+    "version": "0.1.0",
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table-archive",
+            "name": "dataset-attribute-table-archive",
+            "description": "Dataset attribute table archive from Harmonizome.",
+            "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/cm4aiu2os/gene_attribute_matrix.txt.zip",
+            "encodingFormat": "application/zip",
+            "sha256": "b79fe455fd934492e0374b2db7e4032b6048d19dd194f4b730157f0f6b9caf00"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table",
+            "name": "dataset-attribute-table",
+            "description": "Dataset attribute table from Harmonizome.",
+            "containedIn": {
+                "@id": "dataset-attribute-table-archive"
+            },
+            "contentUrl": "gene_attribute_matrix.txt",
+            "encodingFormat": "text/tab-separated-values"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "associations",
+            "name": "associations",
+            "key": {
+                "@id": "associations/gene"
+            },
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/gene",
+                    "name": "gene",
+                    "description": "The NCBI gene symbol",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Text",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Gene"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/9-1-1-RAD17-RFC_complex",
+                    "name": "associations/9-1-1-RAD17-RFC complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "9-1-1-RAD17-RFC complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AP-1_transcription_factor_complex",
+                    "name": "associations/AP-1 transcription factor complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AP-1 transcription factor complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Actin_cytoskeleton_remodeling_and_signal_transduction_1",
+                    "name": "associations/Actin cytoskeleton remodeling and signal transduction 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Actin cytoskeleton remodeling and signal transduction 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Actin_cytoskeleton_remodeling_and_signal_transduction_2",
+                    "name": "associations/Actin cytoskeleton remodeling and signal transduction 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Actin cytoskeleton remodeling and signal transduction 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Actin_filaments",
+                    "name": "associations/Actin filaments",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Actin filaments"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Aminoacyl-tRNA_synthetase_multienzyme_assembly",
+                    "name": "associations/Aminoacyl-tRNA synthetase multienzyme assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Aminoacyl-tRNA synthetase multienzyme assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Amyloid_precursor_protein_complex_1",
+                    "name": "associations/Amyloid precursor protein complex 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Amyloid precursor protein complex 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Amyloid_precursor_protein_complex_2",
+                    "name": "associations/Amyloid precursor protein complex 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Amyloid precursor protein complex 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Anaphase-promoting_and_cell_cycle_kinase_complexes",
+                    "name": "associations/Anaphase-promoting and cell cycle kinase complexes",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Anaphase-promoting and cell cycle kinase complexes"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Arp2/3_protein_complex",
+                    "name": "associations/Arp2/3 protein complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Arp2/3 protein complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/BLOC-1_complex",
+                    "name": "associations/BLOC-1 complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "BLOC-1 complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CENP-H-I_complex",
+                    "name": "associations/CENP-H-I complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CENP-H-I complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CST_complex",
+                    "name": "associations/CST complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CST complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cell_cycle_and_division_regulation",
+                    "name": "associations/Cell cycle and division regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cell cycle and division regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cell_junctions",
+                    "name": "associations/Cell junctions",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cell junctions"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cellular_Ion_Homeostasis_and_Metal_Ion_Transport",
+                    "name": "associations/Cellular Ion Homeostasis and Metal Ion Transport",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cellular Ion Homeostasis and Metal Ion Transport"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cellular_Redox_Homeostasis_and_Vesicular_Trafficking",
+                    "name": "associations/Cellular Redox Homeostasis and Vesicular Trafficking",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cellular Redox Homeostasis and Vesicular Trafficking"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cellular_metabolism_and_vesicular_transport_regulation",
+                    "name": "associations/Cellular metabolism and vesicular transport regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cellular metabolism and vesicular transport regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cellular_redox_homeostasis_and_nucleotide_biosynthesis_regulation",
+                    "name": "associations/Cellular redox homeostasis and nucleotide biosynthesis regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cellular redox homeostasis and nucleotide biosynthesis regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Centrosome",
+                    "name": "associations/Centrosome",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Centrosome"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chaperone-mediated_protein_folding_complex",
+                    "name": "associations/Chaperone-mediated protein folding complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chaperone-mediated protein folding complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_factors",
+                    "name": "associations/Chromatin factors",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin factors"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_modification_and_transcriptional_regulation_1",
+                    "name": "associations/Chromatin modification and transcriptional regulation 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin modification and transcriptional regulation 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_modification_and_transcriptional_regulation_2",
+                    "name": "associations/Chromatin modification and transcriptional regulation 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin modification and transcriptional regulation 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_organization_and_gene_expression_regulators",
+                    "name": "associations/Chromatin organization and gene expression regulators",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin organization and gene expression regulators"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_organization_and_methylation_cycle_maintenance",
+                    "name": "associations/Chromatin organization and methylation cycle maintenance",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin organization and methylation cycle maintenance"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_organization_and_transcription_initiation",
+                    "name": "associations/Chromatin organization and transcription initiation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin organization and transcription initiation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_remodeling_and_transcriptional_regulation_1",
+                    "name": "associations/Chromatin remodeling and transcriptional regulation 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin remodeling and transcriptional regulation 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin_remodeling_and_transcriptional_regulation_2",
+                    "name": "associations/Chromatin remodeling and transcriptional regulation 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin remodeling and transcriptional regulation 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromatin-associated_cell_division_complexes",
+                    "name": "associations/Chromatin-associated cell division complexes",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromatin-associated cell division complexes"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromosome_segregation_and_DNA_repair",
+                    "name": "associations/Chromosome segregation and DNA repair",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromosome segregation and DNA repair"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Chromosome_stability_and_DNA_repair_mechanisms",
+                    "name": "associations/Chromosome stability and DNA repair mechanisms",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Chromosome stability and DNA repair mechanisms"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ciliary_assembly",
+                    "name": "associations/Ciliary assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ciliary assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Clathrin-mediated_endocytosis",
+                    "name": "associations/Clathrin-mediated endocytosis",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Clathrin-mediated endocytosis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Collagen_biosynthesis",
+                    "name": "associations/Collagen biosynthesis",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Collagen biosynthesis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Collagen_biosynthesis_and_extracellular_matrix_organization",
+                    "name": "associations/Collagen biosynthesis and extracellular matrix organization",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Collagen biosynthesis and extracellular matrix organization"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytochrome_complex",
+                    "name": "associations/Cytochrome complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytochrome complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytoplasmic_vescicle_for_mRNA_regulation",
+                    "name": "associations/Cytoplasmic vescicle for mRNA regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytoplasmic vescicle for mRNA regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytoskeletal_dynamics_and_intracellular_transport",
+                    "name": "associations/Cytoskeletal dynamics and intracellular transport",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytoskeletal dynamics and intracellular transport"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytoskeletal_organization_and_cell_adhesion_dynamics",
+                    "name": "associations/Cytoskeletal organization and cell adhesion dynamics",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytoskeletal organization and cell adhesion dynamics"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytoskeletal_organization_and_intracellular_transport_regulation",
+                    "name": "associations/Cytoskeletal organization and intracellular transport regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytoskeletal organization and intracellular transport regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytoskeleton_organization_and_intracellular_signaling",
+                    "name": "associations/Cytoskeleton organization and intracellular signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytoskeleton organization and intracellular signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytosolic_protein_folding_1",
+                    "name": "associations/Cytosolic protein folding 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytosolic protein folding 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cytosolic_protein_folding_2",
+                    "name": "associations/Cytosolic protein folding 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cytosolic protein folding 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DNA_Repair_and_Cellular_Stress_Response",
+                    "name": "associations/DNA Repair and Cellular Stress Response",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DNA Repair and Cellular Stress Response"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DNA_damage_repair_and_response_system",
+                    "name": "associations/DNA damage repair and response system",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DNA damage repair and response system"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DNA_repair_and_telomere_maintenance_complex",
+                    "name": "associations/DNA repair and telomere maintenance complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DNA repair and telomere maintenance complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DNA_repair_and_transcriptional_regulation",
+                    "name": "associations/DNA repair and transcriptional regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DNA repair and transcriptional regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DNA_replication_and_repair_system",
+                    "name": "associations/DNA replication and repair system",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DNA replication and repair system"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DPYSL_complex",
+                    "name": "associations/DPYSL complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DPYSL complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endocytic_and_cytoskeletal_regulation",
+                    "name": "associations/Endocytic and cytoskeletal regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endocytic and cytoskeletal regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endocytic_pathway_regulation_and_vesicle_trafficking",
+                    "name": "associations/Endocytic pathway regulation and vesicle trafficking",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endocytic pathway regulation and vesicle trafficking"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endocytic_regulation_via_ubiquitination_1",
+                    "name": "associations/Endocytic regulation via ubiquitination 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endocytic regulation via ubiquitination 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endocytic_regulation_via_ubiquitination_2",
+                    "name": "associations/Endocytic regulation via ubiquitination 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endocytic regulation via ubiquitination 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endocytosis_complex",
+                    "name": "associations/Endocytosis complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endocytosis complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endoplasmic_reticulum",
+                    "name": "associations/Endoplasmic reticulum",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endoplasmic reticulum"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endoplasmic_reticulum_morphology_and_vesicular_traffic_regulation",
+                    "name": "associations/Endoplasmic reticulum morphology and vesicular traffic regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endoplasmic reticulum morphology and vesicular traffic regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endosomal_organization_and_transportation_assembly_1",
+                    "name": "associations/Endosomal organization and transportation assembly 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endosomal organization and transportation assembly 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endosomal_organization_and_transportation_assembly_2",
+                    "name": "associations/Endosomal organization and transportation assembly 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endosomal organization and transportation assembly 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Endosomal_sorting_and_trafficking",
+                    "name": "associations/Endosomal sorting and trafficking",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Endosomal sorting and trafficking"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Energy_metabolism_regulation_complex",
+                    "name": "associations/Energy metabolism regulation complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Energy metabolism regulation complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Exosome",
+                    "name": "associations/Exosome",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Exosome"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Extracellular_matrix_organization_and_signaling_modulation",
+                    "name": "associations/Extracellular matrix organization and signaling modulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Extracellular matrix organization and signaling modulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Extracellular_matrix_organization_subcomplex",
+                    "name": "associations/Extracellular matrix organization subcomplex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Extracellular matrix organization subcomplex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/G-protein_signaling_and_cell_cycle_regulation",
+                    "name": "associations/G-protein signaling and cell cycle regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "G-protein signaling and cell cycle regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GID_complex",
+                    "name": "associations/GID complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GID complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GNAS-L-GNB4-GNG2_complex",
+                    "name": "associations/GNAS-L-GNB4-GNG2 complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GNAS-L-GNB4-GNG2 complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Glycogen_Metabolism_and_Autophagy_Regulation",
+                    "name": "associations/Glycogen Metabolism and Autophagy Regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Glycogen Metabolism and Autophagy Regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Glycogen_synthase_kinase-3_(gsk-3)_signaling_regulation",
+                    "name": "associations/Glycogen synthase kinase-3 (gsk-3) signaling regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Glycogen synthase kinase-3 (gsk-3) signaling regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Golgi_apparatus",
+                    "name": "associations/Golgi apparatus",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Golgi apparatus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Golgi_apparatus_organization_and_signaling",
+                    "name": "associations/Golgi apparatus organization and signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Golgi apparatus organization and signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Heat_shock_protein_complex",
+                    "name": "associations/Heat shock protein complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Heat shock protein complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Hematopoietic_Cell_Differentiation_and_Function",
+                    "name": "associations/Hematopoietic Cell Differentiation and Function",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Hematopoietic Cell Differentiation and Function"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Hematopoietic_regulation_and_bone_development",
+                    "name": "associations/Hematopoietic regulation and bone development",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Hematopoietic regulation and bone development"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/IkappaB_kinase_complex",
+                    "name": "associations/IkappaB kinase complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "IkappaB kinase complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Immune_response_modulation_and_cellular_differentiation_signaling",
+                    "name": "associations/Immune response modulation and cellular differentiation signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Immune response modulation and cellular differentiation signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Interferon-stimulated_gene_factor_3_(ISGF3)_complex",
+                    "name": "associations/Interferon-stimulated gene factor 3 (ISGF3) complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Interferon-stimulated gene factor 3 (ISGF3) complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intermediate_filaments",
+                    "name": "associations/Intermediate filaments",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intermediate filaments"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_protein_transport_and_DNA_repair",
+                    "name": "associations/Intracellular protein transport and DNA repair",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular protein transport and DNA repair"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_signaling_and_cell_migration_supercomplex",
+                    "name": "associations/Intracellular signaling and cell migration supercomplex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular signaling and cell migration supercomplex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_signaling_and_cytoskeletal_dynamics",
+                    "name": "associations/Intracellular signaling and cytoskeletal dynamics",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular signaling and cytoskeletal dynamics"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_trafficking_and_cytoskeletal_organization",
+                    "name": "associations/Intracellular trafficking and cytoskeletal organization",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular trafficking and cytoskeletal organization"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_trafficking_and_lipid_signaling_regulation",
+                    "name": "associations/Intracellular trafficking and lipid signaling regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular trafficking and lipid signaling regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_trafficking_and_peroxisomes",
+                    "name": "associations/Intracellular trafficking and peroxisomes",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular trafficking and peroxisomes"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_trafficking_and_signal_transduction_modulation",
+                    "name": "associations/Intracellular trafficking and signal transduction modulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular trafficking and signal transduction modulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Intracellular_transport_and_vesicle-mediated_processes",
+                    "name": "associations/Intracellular transport and vesicle-mediated processes",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Intracellular transport and vesicle-mediated processes"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Large_ribosomal_subunit",
+                    "name": "associations/Large ribosomal subunit",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Large ribosomal subunit"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Lysosomal_function_and_lipid_metabolism",
+                    "name": "associations/Lysosomal function and lipid metabolism",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Lysosomal function and lipid metabolism"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/MAPK_signaling_pathway",
+                    "name": "associations/MAPK signaling pathway",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "MAPK signaling pathway"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mediator_complex",
+                    "name": "associations/Mediator complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mediator complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Microtubules",
+                    "name": "associations/Microtubules",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Microtubules"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Microvesicular_body_biogenesis",
+                    "name": "associations/Microvesicular body biogenesis",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Microvesicular body biogenesis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_Function_and_Regulation",
+                    "name": "associations/Mitochondrial Function and Regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial Function and Regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_Integrity_and_Metabolism",
+                    "name": "associations/Mitochondrial Integrity and Metabolism",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial Integrity and Metabolism"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_aminoacyl-tRNA_synthesis_and_branched-chain_amino_acid_catabolism",
+                    "name": "associations/Mitochondrial aminoacyl-tRNA synthesis and branched-chain amino acid catabolism",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial aminoacyl-tRNA synthesis and branched-chain amino acid catabolism"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_biogenesis_and_protein_quality_control",
+                    "name": "associations/Mitochondrial biogenesis and protein quality control",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial biogenesis and protein quality control"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_dynamics_and_metabolism",
+                    "name": "associations/Mitochondrial dynamics and metabolism",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial dynamics and metabolism"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_electron_transport_chain_function",
+                    "name": "associations/Mitochondrial electron transport chain function",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial electron transport chain function"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_function_and_apoptosis_regulation",
+                    "name": "associations/Mitochondrial function and apoptosis regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial function and apoptosis regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_function_and_metabolism_regulation",
+                    "name": "associations/Mitochondrial function and metabolism regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial function and metabolism regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_large_ribosomal_subunit",
+                    "name": "associations/Mitochondrial large ribosomal subunit",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial large ribosomal subunit"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_large_ribosomal_subunit_-_2",
+                    "name": "associations/Mitochondrial large ribosomal subunit - 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial large ribosomal subunit - 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_metabolic_enzymes",
+                    "name": "associations/Mitochondrial metabolic enzymes",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial metabolic enzymes"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_metabolism_and_protein_regulation",
+                    "name": "associations/Mitochondrial metabolism and protein regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial metabolism and protein regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_ribosome",
+                    "name": "associations/Mitochondrial ribosome",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial ribosome"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_small_ribosomal_subunit",
+                    "name": "associations/Mitochondrial small ribosomal subunit",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial small ribosomal subunit"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrial_small_ribosomal_subunit_transport_core",
+                    "name": "associations/Mitochondrial small ribosomal subunit transport core",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrial small ribosomal subunit transport core"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitochondrion",
+                    "name": "associations/Mitochondrion",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitochondrion"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitocondrial_and_membrane_associated_processing",
+                    "name": "associations/Mitocondrial and membrane associated processing",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitocondrial and membrane associated processing"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitotic_cell_cycle_and_chromosome_segregation_regulators",
+                    "name": "associations/Mitotic cell cycle and chromosome segregation regulators",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitotic cell cycle and chromosome segregation regulators"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitotic_cell_cycle_progression_and_regulation_1",
+                    "name": "associations/Mitotic cell cycle progression and regulation 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitotic cell cycle progression and regulation 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitotic_cell_cycle_progression_and_regulation_2",
+                    "name": "associations/Mitotic cell cycle progression and regulation 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitotic cell cycle progression and regulation 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Mitotic_spindle_assembly_and_cell_cycle_regulation",
+                    "name": "associations/Mitotic spindle assembly and cell cycle regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Mitotic spindle assembly and cell cycle regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NCOR-associated_transcriptional_regulation_(NATR)",
+                    "name": "associations/NCOR-associated transcriptional regulation (NATR)",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NCOR-associated transcriptional regulation (NATR)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NELF_complex",
+                    "name": "associations/NELF complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NELF complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NSL_complex",
+                    "name": "associations/NSL complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NSL complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NSL-MLL_complex",
+                    "name": "associations/NSL-MLL complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NSL-MLL complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Neurotransmitter_Regulation_and_Iron_Homeostasis",
+                    "name": "associations/Neurotransmitter Regulation and Iron Homeostasis",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Neurotransmitter Regulation and Iron Homeostasis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_1",
+                    "name": "associations/No annotation - 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_10",
+                    "name": "associations/No annotation - 10",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 10"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_11",
+                    "name": "associations/No annotation - 11",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 11"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_12",
+                    "name": "associations/No annotation - 12",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 12"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_13",
+                    "name": "associations/No annotation - 13",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 13"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_14",
+                    "name": "associations/No annotation - 14",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 14"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_15",
+                    "name": "associations/No annotation - 15",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 15"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_16",
+                    "name": "associations/No annotation - 16",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 16"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_17",
+                    "name": "associations/No annotation - 17",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 17"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_18",
+                    "name": "associations/No annotation - 18",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 18"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_19",
+                    "name": "associations/No annotation - 19",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 19"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_2",
+                    "name": "associations/No annotation - 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_20",
+                    "name": "associations/No annotation - 20",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 20"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_21",
+                    "name": "associations/No annotation - 21",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 21"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_22",
+                    "name": "associations/No annotation - 22",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 22"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_23",
+                    "name": "associations/No annotation - 23",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 23"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_24",
+                    "name": "associations/No annotation - 24",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 24"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_25",
+                    "name": "associations/No annotation - 25",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 25"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_26",
+                    "name": "associations/No annotation - 26",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 26"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_27",
+                    "name": "associations/No annotation - 27",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 27"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_28",
+                    "name": "associations/No annotation - 28",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 28"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_29",
+                    "name": "associations/No annotation - 29",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 29"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_3",
+                    "name": "associations/No annotation - 3",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_30",
+                    "name": "associations/No annotation - 30",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 30"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_31",
+                    "name": "associations/No annotation - 31",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 31"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_32",
+                    "name": "associations/No annotation - 32",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 32"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_33",
+                    "name": "associations/No annotation - 33",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 33"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_34",
+                    "name": "associations/No annotation - 34",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 34"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_35",
+                    "name": "associations/No annotation - 35",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 35"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_36",
+                    "name": "associations/No annotation - 36",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 36"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_4",
+                    "name": "associations/No annotation - 4",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 4"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_5",
+                    "name": "associations/No annotation - 5",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 5"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_6",
+                    "name": "associations/No annotation - 6",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 6"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_7",
+                    "name": "associations/No annotation - 7",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 7"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_8",
+                    "name": "associations/No annotation - 8",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 8"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/No_annotation_-_9",
+                    "name": "associations/No annotation - 9",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "No annotation - 9"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nonhomologous_end_joining_repair_complex",
+                    "name": "associations/Nonhomologous end joining repair complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nonhomologous end joining repair complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Notch_signaling",
+                    "name": "associations/Notch signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Notch signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NuA4_histone_acetyltransferase_complex",
+                    "name": "associations/NuA4 histone acetyltransferase complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NuA4 histone acetyltransferase complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_envelope_and_nucleocytoplasmic_transport",
+                    "name": "associations/Nuclear envelope and nucleocytoplasmic transport",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear envelope and nucleocytoplasmic transport"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_pore_complex_and_nucleocytoplasmic_transport",
+                    "name": "associations/Nuclear pore complex and nucleocytoplasmic transport",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear pore complex and nucleocytoplasmic transport"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_speckle_spliceosome_subcomplex",
+                    "name": "associations/Nuclear speckle spliceosome subcomplex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear speckle spliceosome subcomplex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_speckles",
+                    "name": "associations/Nuclear speckles",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear speckles"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_splicing_speckle",
+                    "name": "associations/Nuclear splicing speckle",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear splicing speckle"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_transcription_regulators",
+                    "name": "associations/Nuclear transcription regulators",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear transcription regulators"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nuclear_transport_and_gene_expression_regulation",
+                    "name": "associations/Nuclear transport and gene expression regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nuclear transport and gene expression regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nucleocytoplasmic_transport_and_post-transcriptional_regulation",
+                    "name": "associations/Nucleocytoplasmic transport and post-transcriptional regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nucleocytoplasmic transport and post-transcriptional regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nucleoli",
+                    "name": "associations/Nucleoli",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nucleoli"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nucleoli_fibrillar_center",
+                    "name": "associations/Nucleoli fibrillar center",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nucleoli fibrillar center"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nucleotide-activated_protein_kinase_complex",
+                    "name": "associations/Nucleotide-activated protein kinase complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nucleotide-activated protein kinase complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/P-body",
+                    "name": "associations/P-body",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "P-body"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PRC1_complex",
+                    "name": "associations/PRC1 complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PRC1 complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Plasma_membrane",
+                    "name": "associations/Plasma membrane",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Plasma membrane"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Potential_Ciliary_Function_and_Assembly",
+                    "name": "associations/Potential Ciliary Function and Assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Potential Ciliary Function and Assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Pre-mRNA_splicing_and_ribonucleoprotein_assembly",
+                    "name": "associations/Pre-mRNA splicing and ribonucleoprotein assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Pre-mRNA splicing and ribonucleoprotein assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Pre-mRNA_splicing_and_snRNA_processing",
+                    "name": "associations/Pre-mRNA splicing and snRNA processing",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Pre-mRNA splicing and snRNA processing"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Preribosome",
+                    "name": "associations/Preribosome",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Preribosome"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Proteasome_assembly_and_regulation",
+                    "name": "associations/Proteasome assembly and regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Proteasome assembly and regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Proteasome_complex",
+                    "name": "associations/Proteasome complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Proteasome complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Proteasome-associated_machinery",
+                    "name": "associations/Proteasome-associated machinery",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Proteasome-associated machinery"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_Stability_and_Turnover_Regulation",
+                    "name": "associations/Protein Stability and Turnover Regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein Stability and Turnover Regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_folding_and_complex_assembly_regulation",
+                    "name": "associations/Protein folding and complex assembly regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein folding and complex assembly regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_folding_and_stress_response_regulation",
+                    "name": "associations/Protein folding and stress response regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein folding and stress response regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_processing_and_intracellular_signaling",
+                    "name": "associations/Protein processing and intracellular signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein processing and intracellular signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_quality_control_and_DNA_repair",
+                    "name": "associations/Protein quality control and DNA repair",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein quality control and DNA repair"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_quality_control_and_DNA_repair_complex",
+                    "name": "associations/Protein quality control and DNA repair complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein quality control and DNA repair complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protein_quality_control_and_ubiquitin-proteasome_system_regulation",
+                    "name": "associations/Protein quality control and ubiquitin-proteasome system regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protein quality control and ubiquitin-proteasome system regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Protocadherin-mediated_cell_adhesion_and_signaling",
+                    "name": "associations/Protocadherin-mediated cell adhesion and signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Protocadherin-mediated cell adhesion and signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/R2TP_complex",
+                    "name": "associations/R2TP complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "R2TP complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_metabolism_and_nuclear_transport_regulation",
+                    "name": "associations/RNA metabolism and nuclear transport regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA metabolism and nuclear transport regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_polymerase_II",
+                    "name": "associations/RNA polymerase II",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA polymerase II"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_polymerase_II_transcriptional_regulation_and_mRNA_processing",
+                    "name": "associations/RNA polymerase II transcriptional regulation and mRNA processing",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA polymerase II transcriptional regulation and mRNA processing"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_polymerase_III",
+                    "name": "associations/RNA polymerase III",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA polymerase III"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_polymerase_and_mediator_super_assembly",
+                    "name": "associations/RNA polymerase and mediator super assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA polymerase and mediator super assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_polymerase_assembly",
+                    "name": "associations/RNA polymerase assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA polymerase assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNA_processors",
+                    "name": "associations/RNA processors",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNA processors"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RNAse_mitochondrial_RNA_processing_(MRP)_complex",
+                    "name": "associations/RNAse mitochondrial RNA processing (MRP) complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RNAse mitochondrial RNA processing (MRP) complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RYBP/YAF2-PRC1_complexes_in_cell_division",
+                    "name": "associations/RYBP/YAF2-PRC1 complexes in cell division",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RYBP/YAF2-PRC1 complexes in cell division"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Rag-Ragulator_complex",
+                    "name": "associations/Rag-Ragulator complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Rag-Ragulator complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ragulator_complex_subunit",
+                    "name": "associations/Ragulator complex subunit",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ragulator complex subunit"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ras_family_interactors",
+                    "name": "associations/Ras family interactors",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ras family interactors"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Cellular_Signaling_and_Transcription",
+                    "name": "associations/Regulation of Cellular Signaling and Transcription",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Cellular Signaling and Transcription"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Cytoskeletal_Dynamics_and_Cell_Morphology",
+                    "name": "associations/Regulation of Cytoskeletal Dynamics and Cell Morphology",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Cytoskeletal Dynamics and Cell Morphology"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Cytoskeletal_Dynamics_and_Gene_Expression",
+                    "name": "associations/Regulation of Cytoskeletal Dynamics and Gene Expression",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Cytoskeletal Dynamics and Gene Expression"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Gene_Expression_and_Nuclear_Transport",
+                    "name": "associations/Regulation of Gene Expression and Nuclear Transport",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Gene Expression and Nuclear Transport"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Gene_Expression_and_Protein_Ubiquitination",
+                    "name": "associations/Regulation of Gene Expression and Protein Ubiquitination",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Gene Expression and Protein Ubiquitination"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Mitochondrial_Translation_and_Cellular_Signaling",
+                    "name": "associations/Regulation of Mitochondrial Translation and Cellular Signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Mitochondrial Translation and Cellular Signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_Ribosome_Biogenesis_and_RNA_Processing",
+                    "name": "associations/Regulation of Ribosome Biogenesis and RNA Processing",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of Ribosome Biogenesis and RNA Processing"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_apoptosis_and_RNA_modification",
+                    "name": "associations/Regulation of apoptosis and RNA modification",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of apoptosis and RNA modification"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_cell_cycle_and_gene_expression",
+                    "name": "associations/Regulation of cell cycle and gene expression",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of cell cycle and gene expression"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_cell_cycle_and_transcription_in_development",
+                    "name": "associations/Regulation of cell cycle and transcription in development",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of cell cycle and transcription in development"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_cellular_architecture_and_autophagy",
+                    "name": "associations/Regulation of cellular architecture and autophagy",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of cellular architecture and autophagy"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_cellular_redox_state_and_amino_acid_transport",
+                    "name": "associations/Regulation of cellular redox state and amino acid transport",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of cellular redox state and amino acid transport"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_cellular_stress_responses_and_metal_ion_homeostasis",
+                    "name": "associations/Regulation of cellular stress responses and metal ion homeostasis",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of cellular stress responses and metal ion homeostasis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_circadian_rhythm_and_response_to_hypoxia",
+                    "name": "associations/Regulation of circadian rhythm and response to hypoxia",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of circadian rhythm and response to hypoxia"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_cell_cycle_progression",
+                    "name": "associations/Regulation of gene expression and cell cycle progression",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and cell cycle progression"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_cellular_stress_response",
+                    "name": "associations/Regulation of gene expression and cellular stress response",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and cellular stress response"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_chromatin_remodeling",
+                    "name": "associations/Regulation of gene expression and chromatin remodeling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and chromatin remodeling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_chromosomal_stability",
+                    "name": "associations/Regulation of gene expression and chromosomal stability",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and chromosomal stability"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_mRNA_processing",
+                    "name": "associations/Regulation of gene expression and mRNA processing",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and mRNA processing"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_mRNA_processing_-_2",
+                    "name": "associations/Regulation of gene expression and mRNA processing - 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and mRNA processing - 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_protein_modification",
+                    "name": "associations/Regulation of gene expression and protein modification",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and protein modification"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_protein_quality_control",
+                    "name": "associations/Regulation of gene expression and protein quality control",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and protein quality control"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_signal_transduction",
+                    "name": "associations/Regulation of gene expression and signal transduction",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and signal transduction"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_gene_expression_and_signal_transduction_in_immune_and_stress_responses",
+                    "name": "associations/Regulation of gene expression and signal transduction in immune and stress responses",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of gene expression and signal transduction in immune and stress responses"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_hematopoiesis_and_bone_development",
+                    "name": "associations/Regulation of hematopoiesis and bone development",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of hematopoiesis and bone development"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_mRNA_processing_and_protein_ubiquitination",
+                    "name": "associations/Regulation of mRNA processing and protein ubiquitination",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of mRNA processing and protein ubiquitination"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_mRNA_translation_and_cellular_metabolism",
+                    "name": "associations/Regulation of mRNA translation and cellular metabolism",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of mRNA translation and cellular metabolism"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Regulation_of_p53-mediated_cellular_stress_response",
+                    "name": "associations/Regulation of p53-mediated cellular stress response",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Regulation of p53-mediated cellular stress response"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ribosome_biogenesis_and_RNA_processing",
+                    "name": "associations/Ribosome biogenesis and RNA processing",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ribosome biogenesis and RNA processing"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ribosome_biogenesis_complex",
+                    "name": "associations/Ribosome biogenesis complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ribosome biogenesis complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SAGA_complex",
+                    "name": "associations/SAGA complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SAGA complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SAGA_complex_-_2",
+                    "name": "associations/SAGA complex - 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SAGA complex - 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SCF_ubiquitin_ligase_complex",
+                    "name": "associations/SCF ubiquitin ligase complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SCF ubiquitin ligase complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SNARE_complex",
+                    "name": "associations/SNARE complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SNARE complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/STRIPAK_complex",
+                    "name": "associations/STRIPAK complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "STRIPAK complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SWI/SNF_and_transcription_regulator",
+                    "name": "associations/SWI/SNF and transcription regulator",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SWI/SNF and transcription regulator"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SWI/SNF_complex",
+                    "name": "associations/SWI/SNF complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SWI/SNF complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Septin_complex_1",
+                    "name": "associations/Septin complex 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Septin complex 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Septin_complex_2",
+                    "name": "associations/Septin complex 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Septin complex 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Septin_mediated_cytoskeleton_organization",
+                    "name": "associations/Septin mediated cytoskeleton organization",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Septin mediated cytoskeleton organization"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Signal_recognition_particle_(SRP)_associated_protein_translocation",
+                    "name": "associations/Signal recognition particle (SRP) associated protein translocation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Signal recognition particle (SRP) associated protein translocation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Steroidogenesis_and_lipid_metabolism",
+                    "name": "associations/Steroidogenesis and lipid metabolism",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Steroidogenesis and lipid metabolism"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Stress_response_complex",
+                    "name": "associations/Stress response complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Stress response complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Syntaxin-binding_protein_complex",
+                    "name": "associations/Syntaxin-binding protein complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Syntaxin-binding protein complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/TFIIH_transcription_factor_complex",
+                    "name": "associations/TFIIH transcription factor complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "TFIIH transcription factor complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/THO_complex_and_transcription_export",
+                    "name": "associations/THO complex and transcription export",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "THO complex and transcription export"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/TOM_complex,_mitochondrial",
+                    "name": "associations/TOM complex, mitochondrial",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "TOM complex, mitochondrial"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Telomere_maintenance_and_DNA_repair",
+                    "name": "associations/Telomere maintenance and DNA repair",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Telomere maintenance and DNA repair"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Transcription_Factor_IID_complex_(TFIID)",
+                    "name": "associations/Transcription Factor IID complex (TFIID)",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Transcription Factor IID complex (TFIID)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Transcription_factor_TFTC_complex",
+                    "name": "associations/Transcription factor TFTC complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Transcription factor TFTC complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Transcription_regulators_and_chromatin_remodelers",
+                    "name": "associations/Transcription regulators and chromatin remodelers",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Transcription regulators and chromatin remodelers"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Transcriptional_regulation_and_signal_transduction",
+                    "name": "associations/Transcriptional regulation and signal transduction",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Transcriptional regulation and signal transduction"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ubiquitin-mediated_cell_cycle_regulation",
+                    "name": "associations/Ubiquitin-mediated cell cycle regulation",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ubiquitin-mediated cell cycle regulation"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ubiquitin-mediated_proteolysis",
+                    "name": "associations/Ubiquitin-mediated proteolysis",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ubiquitin-mediated proteolysis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ubiquitin-proteasome_complex",
+                    "name": "associations/Ubiquitin-proteasome complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ubiquitin-proteasome complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Vesicle_trafficking_and_regulation_1",
+                    "name": "associations/Vesicle trafficking and regulation 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Vesicle trafficking and regulation 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Vesicle_trafficking_and_regulation_2",
+                    "name": "associations/Vesicle trafficking and regulation 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Vesicle trafficking and regulation 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Zinc_finger_transcription_factors",
+                    "name": "associations/Zinc finger transcription factors",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Zinc finger transcription factors"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/cAMP-dependent_protein_kinase_signaling",
+                    "name": "associations/cAMP-dependent protein kinase signaling",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "cAMP-dependent protein kinase signaling"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/eIF3_complex_1",
+                    "name": "associations/eIF3 complex 1",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "eIF3 complex 1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/eIF3_complex_2",
+                    "name": "associations/eIF3 complex 2",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "eIF3 complex 2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/mRNA_Processing_and_Spliceosome_Assembly",
+                    "name": "associations/mRNA Processing and Spliceosome Assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "mRNA Processing and Spliceosome Assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/mRNA_Surveillance_and_Repair_Pathway",
+                    "name": "associations/mRNA Surveillance and Repair Pathway",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "mRNA Surveillance and Repair Pathway"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/mRNA_cleavage_and_polyadenylation_specificity_factor_complex",
+                    "name": "associations/mRNA cleavage and polyadenylation specificity factor complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "mRNA cleavage and polyadenylation specificity factor complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/mRNA_regulation_and_decay",
+                    "name": "associations/mRNA regulation and decay",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "mRNA regulation and decay"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/mRNA_regulation_complex",
+                    "name": "associations/mRNA regulation complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "mRNA regulation complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/mRNA_surveillance_and_decay_pathway",
+                    "name": "associations/mRNA surveillance and decay pathway",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "mRNA surveillance and decay pathway"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/proton-transporting_V-type_ATPase_complex",
+                    "name": "associations/proton-transporting V-type ATPase complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "proton-transporting V-type ATPase complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/snRNP_assembly",
+                    "name": "associations/snRNP assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "snRNP assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/tRNA_protein_synthesis_complex",
+                    "name": "associations/tRNA protein synthesis complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "tRNA protein synthesis complex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/tRNA_splicing_endonuclease_and_telomere_cap_assembly",
+                    "name": "associations/tRNA splicing endonuclease and telomere cap assembly",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "tRNA splicing endonuclease and telomere cap assembly"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/tRNA-splicing_ligase_complex",
+                    "name": "associations/tRNA-splicing ligase complex",
+                    "cr:arrayShape": "4835",
+                    "cr:isArray": true,
+                    "dataType": "sc:Integer",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "tRNA-splicing ligase complex"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
