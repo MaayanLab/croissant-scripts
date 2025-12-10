@@ -52,7 +52,7 @@
     "citeAs": "@article{GTEx Consortium, Science, 2020, title={The GTEx Consortium atlas of genetic regulatory effects across hman tissues}, author={GTEx Consortium}, journal={Science}, year={2020}, volume={369}, pages={1318-1330}}",
     "creator": {
         "@type": "sc:Organization",
-        "name": "GTEx",
+        "name": "The Genotype-Tissue Expression Project",
         "url": "https://gtexportal.org/home/"
     },
     "datePublished": "2024-12-06 00:00:00",
@@ -71,7 +71,7 @@
             "name": "dataset-attribute-table-archive",
             "description": "Dataset attribute table archive from Harmonizome.",
             "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/gtexagingsignatures/gene_attribute_matrix_standardized.txt.gz",
-            "encodingFormat": "application/zip",
+            "encodingFormat": "application/gzip",
             "sha256": "4468693a685ba04020fcc100fbe68bd3f9191c3d71b923800d4944cc64b5800e"
         },
         {
