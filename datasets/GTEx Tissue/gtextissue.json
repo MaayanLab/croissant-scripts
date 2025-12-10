@@ -1,0 +1,982 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "rai": "http://mlcommons.org/croissant/RAI/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "examples": {
+            "@id": "cr:examples",
+            "@type": "@json"
+        },
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "samplingRate": "cr:samplingRate",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "name": "GTEx Tissue Gene Expression Profiles",
+    "description": "Gene expression profiles for tissues from GTEx by RNA-seq, updated for 2023",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "citeAs": "@article{GTEx Consortium, Science, 2020, title={The GTEx Consortium atlas of genetic regulatory effects across hman tissues}, author={GTEx Consortium}, journal={Science}, year={2020}, volume={369}, pages={1318-1330}}",
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "The Genotype-Tissue Expression Project",
+        "url": "https://gtexportal.org/home/"
+    },
+    "datePublished": "2023-11-01 00:00:00",
+    "license": "https://gtexportal.org/home/license",
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Ma'ayan Lab",
+        "url": "https://maayanlab.cloud/"
+    },
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/GTEx+Tissue+Gene+Expression+Profiles+2023",
+    "version": "0.1.0",
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table-archive",
+            "name": "dataset-attribute-table-archive",
+            "description": "Dataset attribute table archive from Harmonizome.",
+            "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/gtextissue23/gene_attribute_matrix_standardized.txt.gz",
+            "encodingFormat": "application/gzip",
+            "sha256": "6531813e4f002d3a308096ada6b6613a3e22914b934c725a1493f1600e772bb8"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table",
+            "name": "dataset-attribute-table",
+            "description": "Dataset attribute table from Harmonizome.",
+            "containedIn": {
+                "@id": "dataset-attribute-table-archive"
+            },
+            "contentUrl": "gene_attribute_matrix.txt",
+            "encodingFormat": "text/tab-separated-values"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "associations",
+            "name": "associations",
+            "key": {
+                "@id": "associations/gene"
+            },
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/gene",
+                    "name": "gene",
+                    "description": "The NCBI gene symbol",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Text",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Gene"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Adipose_-_Subcutaneous",
+                    "name": "associations/Adipose - Subcutaneous",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Adipose - Subcutaneous"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Adipose_-_Visceral_(Omentum)",
+                    "name": "associations/Adipose - Visceral (Omentum)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Adipose - Visceral (Omentum)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Adrenal_Gland",
+                    "name": "associations/Adrenal Gland",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Adrenal Gland"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Artery_-_Aorta",
+                    "name": "associations/Artery - Aorta",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Artery - Aorta"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Artery_-_Coronary",
+                    "name": "associations/Artery - Coronary",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Artery - Coronary"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Artery_-_Tibial",
+                    "name": "associations/Artery - Tibial",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Artery - Tibial"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Bladder",
+                    "name": "associations/Bladder",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Bladder"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Amygdala",
+                    "name": "associations/Brain - Amygdala",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Amygdala"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Anterior_cingulate_cortex_(BA24)",
+                    "name": "associations/Brain - Anterior cingulate cortex (BA24)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Anterior cingulate cortex (BA24)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Caudate_(basal_ganglia)",
+                    "name": "associations/Brain - Caudate (basal ganglia)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Caudate (basal ganglia)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Cerebellar_Hemisphere",
+                    "name": "associations/Brain - Cerebellar Hemisphere",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Cerebellar Hemisphere"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Cerebellum",
+                    "name": "associations/Brain - Cerebellum",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Cerebellum"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Cortex",
+                    "name": "associations/Brain - Cortex",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Cortex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Frontal_Cortex_(BA9)",
+                    "name": "associations/Brain - Frontal Cortex (BA9)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Frontal Cortex (BA9)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Hippocampus",
+                    "name": "associations/Brain - Hippocampus",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Hippocampus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Hypothalamus",
+                    "name": "associations/Brain - Hypothalamus",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Hypothalamus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Nucleus_accumbens_(basal_ganglia)",
+                    "name": "associations/Brain - Nucleus accumbens (basal ganglia)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Nucleus accumbens (basal ganglia)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Putamen_(basal_ganglia)",
+                    "name": "associations/Brain - Putamen (basal ganglia)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Putamen (basal ganglia)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Spinal_cord_(cervical_c-1)",
+                    "name": "associations/Brain - Spinal cord (cervical c-1)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Spinal cord (cervical c-1)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Brain_-_Substantia_nigra",
+                    "name": "associations/Brain - Substantia nigra",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Brain - Substantia nigra"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Breast_-_Mammary_Tissue",
+                    "name": "associations/Breast - Mammary Tissue",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Breast - Mammary Tissue"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cells_-_Cultured_fibroblasts",
+                    "name": "associations/Cells - Cultured fibroblasts",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cells - Cultured fibroblasts"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cells_-_EBV-transformed_lymphocytes",
+                    "name": "associations/Cells - EBV-transformed lymphocytes",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cells - EBV-transformed lymphocytes"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cervix_-_Ectocervix",
+                    "name": "associations/Cervix - Ectocervix",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cervix - Ectocervix"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Cervix_-_Endocervix",
+                    "name": "associations/Cervix - Endocervix",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Cervix - Endocervix"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Colon_-_Sigmoid",
+                    "name": "associations/Colon - Sigmoid",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Colon - Sigmoid"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Colon_-_Transverse",
+                    "name": "associations/Colon - Transverse",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Colon - Transverse"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Esophagus_-_Gastroesophageal_Junction",
+                    "name": "associations/Esophagus - Gastroesophageal Junction",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Esophagus - Gastroesophageal Junction"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Esophagus_-_Mucosa",
+                    "name": "associations/Esophagus - Mucosa",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Esophagus - Mucosa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Esophagus_-_Muscularis",
+                    "name": "associations/Esophagus - Muscularis",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Esophagus - Muscularis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Fallopian_Tube",
+                    "name": "associations/Fallopian Tube",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Fallopian Tube"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Heart_-_Atrial_Appendage",
+                    "name": "associations/Heart - Atrial Appendage",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Heart - Atrial Appendage"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Heart_-_Left_Ventricle",
+                    "name": "associations/Heart - Left Ventricle",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Heart - Left Ventricle"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Kidney_-_Cortex",
+                    "name": "associations/Kidney - Cortex",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Kidney - Cortex"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Kidney_-_Medulla",
+                    "name": "associations/Kidney - Medulla",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Kidney - Medulla"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Liver",
+                    "name": "associations/Liver",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Liver"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Lung",
+                    "name": "associations/Lung",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Lung"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Minor_Salivary_Gland",
+                    "name": "associations/Minor Salivary Gland",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Minor Salivary Gland"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Muscle_-_Skeletal",
+                    "name": "associations/Muscle - Skeletal",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Muscle - Skeletal"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Nerve_-_Tibial",
+                    "name": "associations/Nerve - Tibial",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Nerve - Tibial"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ovary",
+                    "name": "associations/Ovary",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ovary"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Pancreas",
+                    "name": "associations/Pancreas",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Pancreas"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Pituitary",
+                    "name": "associations/Pituitary",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Pituitary"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Prostate",
+                    "name": "associations/Prostate",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Prostate"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Skin_-_Not_Sun_Exposed_(Suprapubic)",
+                    "name": "associations/Skin - Not Sun Exposed (Suprapubic)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Skin - Not Sun Exposed (Suprapubic)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Skin_-_Sun_Exposed_(Lower_leg)",
+                    "name": "associations/Skin - Sun Exposed (Lower leg)",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Skin - Sun Exposed (Lower leg)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Small_Intestine_-_Terminal_Ileum",
+                    "name": "associations/Small Intestine - Terminal Ileum",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Small Intestine - Terminal Ileum"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Spleen",
+                    "name": "associations/Spleen",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Spleen"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Stomach",
+                    "name": "associations/Stomach",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Stomach"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Testis",
+                    "name": "associations/Testis",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Testis"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Thyroid",
+                    "name": "associations/Thyroid",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Thyroid"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Uterus",
+                    "name": "associations/Uterus",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Uterus"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Vagina",
+                    "name": "associations/Vagina",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Vagina"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Whole_Blood",
+                    "name": "associations/Whole Blood",
+                    "cr:arrayShape": "18096",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Whole Blood"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
