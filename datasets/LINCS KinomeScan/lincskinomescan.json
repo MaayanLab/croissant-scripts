@@ -1,0 +1,1285 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "rai": "http://mlcommons.org/croissant/RAI/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "examples": {
+            "@id": "cr:examples",
+            "@type": "@json"
+        },
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "samplingRate": "cr:samplingRate",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "name": "LINCS KinomeScan Kinase Inhibitor Targets",
+    "description": "Kinase inhibitor targets from percent inhibition of kinases by small molecules measured using purified kinases",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "The Library of Integrated Network-Based Cellular Signatures ",
+        "url": "https://lincsproject.org/"
+    },
+    "datePublished": "2015-04-06 00:00:00",
+    "license": "https://lincsproject.org/LINCS/data/release-policy",
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Ma'ayan Lab",
+        "url": "https://maayanlab.cloud/"
+    },
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/LINCS+KinomeScan+Kinase+Inhibitor+Targets",
+    "version": "0.1.0",
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table-archive",
+            "name": "dataset-attribute-table-archive",
+            "description": "Dataset attribute table archive from Harmonizome.",
+            "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/kinomescan/gene_attribute_matrix_standardized.txt.zip",
+            "encodingFormat": "application/zip",
+            "sha256": "2757332fd230dd6b4b0fbb760fb4dc8bd7038b3b1db554957fd9647fdb1cee0e"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table",
+            "name": "dataset-attribute-table",
+            "description": "Dataset attribute table from Harmonizome.",
+            "containedIn": {
+                "@id": "dataset-attribute-table-archive"
+            },
+            "contentUrl": "gene_attribute_matrix.txt",
+            "encodingFormat": "text/tab-separated-values"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "associations",
+            "name": "associations",
+            "key": {
+                "@id": "associations/gene"
+            },
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/gene",
+                    "name": "gene",
+                    "description": "The NCBI gene symbol",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Text",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Gene"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/(R)-_Roscovitine",
+                    "name": "associations/(R)- Roscovitine",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "(R)- Roscovitine"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/5z-7-oxozeaenol",
+                    "name": "associations/5z-7-oxozeaenol",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "5z-7-oxozeaenol"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AG1478",
+                    "name": "associations/AG1478",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AG1478"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/ALW-II-38-3",
+                    "name": "associations/ALW-II-38-3",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "ALW-II-38-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AS601245",
+                    "name": "associations/AS601245",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AS601245"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AZ-628",
+                    "name": "associations/AZ-628",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AZ-628"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AZD_5438",
+                    "name": "associations/AZD 5438",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AZD 5438"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AZD-6482",
+                    "name": "associations/AZD-6482",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AZD-6482"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/AZD4547",
+                    "name": "associations/AZD4547",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "AZD4547"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/BEZ235",
+                    "name": "associations/BEZ235",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "BEZ235"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/BMS345541",
+                    "name": "associations/BMS345541",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "BMS345541"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/BS-181",
+                    "name": "associations/BS-181",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "BS-181"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/BX-912",
+                    "name": "associations/BX-912",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "BX-912"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Barasertib",
+                    "name": "associations/Barasertib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Barasertib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Bosutinib",
+                    "name": "associations/Bosutinib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Bosutinib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CG-930",
+                    "name": "associations/CG-930",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CG-930"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CGP60474",
+                    "name": "associations/CGP60474",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CGP60474"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CGP74514A",
+                    "name": "associations/CGP74514A",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CGP74514A"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CP466722",
+                    "name": "associations/CP466722",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CP466722"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CP724714",
+                    "name": "associations/CP724714",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CP724714"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Crizotinib",
+                    "name": "associations/Crizotinib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Crizotinib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Dabrafenib",
+                    "name": "associations/Dabrafenib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Dabrafenib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Dinaciclib",
+                    "name": "associations/Dinaciclib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Dinaciclib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GDC-0941",
+                    "name": "associations/GDC-0941",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GDC-0941"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GSK1059615",
+                    "name": "associations/GSK1059615",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GSK1059615"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GSK2126458",
+                    "name": "associations/GSK2126458",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GSK2126458"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GSK429286A",
+                    "name": "associations/GSK429286A",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GSK429286A"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GSK461364",
+                    "name": "associations/GSK461364",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GSK461364"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GW-5074",
+                    "name": "associations/GW-5074",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GW-5074"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/GW843682",
+                    "name": "associations/GW843682",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "GW843682"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/HG-14-8-02",
+                    "name": "associations/HG-14-8-02",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "HG-14-8-02"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/HG-6-64-01",
+                    "name": "associations/HG-6-64-01",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "HG-6-64-01"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/JNK-9L",
+                    "name": "associations/JNK-9L",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "JNK-9L"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/JNK-IN-5A",
+                    "name": "associations/JNK-IN-5A",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "JNK-IN-5A"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/JWE-035",
+                    "name": "associations/JWE-035",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "JWE-035"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/KIN001-220",
+                    "name": "associations/KIN001-220",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "KIN001-220"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/KU63794",
+                    "name": "associations/KU63794",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "KU63794"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Lapatinib",
+                    "name": "associations/Lapatinib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Lapatinib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/MLN8054",
+                    "name": "associations/MLN8054",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "MLN8054"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Momelotinib",
+                    "name": "associations/Momelotinib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Momelotinib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NU7441",
+                    "name": "associations/NU7441",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NU7441"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Neratinib",
+                    "name": "associations/Neratinib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Neratinib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/OTSSP167",
+                    "name": "associations/OTSSP167",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "OTSSP167"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PD0325901",
+                    "name": "associations/PD0325901",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PD0325901"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PD0332991",
+                    "name": "associations/PD0332991",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PD0332991"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PHA-767491",
+                    "name": "associations/PHA-767491",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PHA-767491"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PHA-793887",
+                    "name": "associations/PHA-793887",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PHA-793887"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PLX-4720",
+                    "name": "associations/PLX-4720",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PLX-4720"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/PLX4032",
+                    "name": "associations/PLX4032",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "PLX4032"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/QL-X-138",
+                    "name": "associations/QL-X-138",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "QL-X-138"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/QL-XI-92",
+                    "name": "associations/QL-XI-92",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "QL-XI-92"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/RO-3306",
+                    "name": "associations/RO-3306",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "RO-3306"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/SB590885",
+                    "name": "associations/SB590885",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "SB590885"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Sigma_A6730",
+                    "name": "associations/Sigma A6730",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Sigma A6730"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Sorafenib",
+                    "name": "associations/Sorafenib",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Sorafenib"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/TAK-715",
+                    "name": "associations/TAK-715",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "TAK-715"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/THZ-2-98-01",
+                    "name": "associations/THZ-2-98-01",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "THZ-2-98-01"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Torin1",
+                    "name": "associations/Torin1",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Torin1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Torin2",
+                    "name": "associations/Torin2",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Torin2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/WYE-125132",
+                    "name": "associations/WYE-125132",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "WYE-125132"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/WZ-7043",
+                    "name": "associations/WZ-7043",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "WZ-7043"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/WZ3105",
+                    "name": "associations/WZ3105",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "WZ3105"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD-12",
+                    "name": "associations/XMD-12",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD-12"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD11-50",
+                    "name": "associations/XMD11-50",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD11-50"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD11-85h",
+                    "name": "associations/XMD11-85h",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD11-85h"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD13-2",
+                    "name": "associations/XMD13-2",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD13-2"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD14-99",
+                    "name": "associations/XMD14-99",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD14-99"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD15-27",
+                    "name": "associations/XMD15-27",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD15-27"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD16-144",
+                    "name": "associations/XMD16-144",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD16-144"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD8-85",
+                    "name": "associations/XMD8-85",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD8-85"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD8-92",
+                    "name": "associations/XMD8-92",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD8-92"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/ZG-10",
+                    "name": "associations/ZG-10",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "ZG-10"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/ZM-447439",
+                    "name": "associations/ZM-447439",
+                    "cr:arrayShape": "287",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "ZM-447439"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
