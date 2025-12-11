@@ -1,0 +1,533 @@
+{
+    "@context": {
+        "@language": "en",
+        "@vocab": "https://schema.org/",
+        "citeAs": "cr:citeAs",
+        "column": "cr:column",
+        "conformsTo": "dct:conformsTo",
+        "cr": "http://mlcommons.org/croissant/",
+        "rai": "http://mlcommons.org/croissant/RAI/",
+        "data": {
+            "@id": "cr:data",
+            "@type": "@json"
+        },
+        "dataType": {
+            "@id": "cr:dataType",
+            "@type": "@vocab"
+        },
+        "dct": "http://purl.org/dc/terms/",
+        "examples": {
+            "@id": "cr:examples",
+            "@type": "@json"
+        },
+        "extract": "cr:extract",
+        "field": "cr:field",
+        "fileProperty": "cr:fileProperty",
+        "fileObject": "cr:fileObject",
+        "fileSet": "cr:fileSet",
+        "format": "cr:format",
+        "includes": "cr:includes",
+        "isLiveDataset": "cr:isLiveDataset",
+        "jsonPath": "cr:jsonPath",
+        "key": "cr:key",
+        "md5": "cr:md5",
+        "parentField": "cr:parentField",
+        "path": "cr:path",
+        "recordSet": "cr:recordSet",
+        "references": "cr:references",
+        "regex": "cr:regex",
+        "repeated": "cr:repeated",
+        "replace": "cr:replace",
+        "samplingRate": "cr:samplingRate",
+        "sc": "https://schema.org/",
+        "separator": "cr:separator",
+        "source": "cr:source",
+        "subField": "cr:subField",
+        "transform": "cr:transform"
+    },
+    "@type": "sc:Dataset",
+    "name": "LINCS Kinativ Kinase Inhibitor Bioactivity Profiles",
+    "description": "Percent inhibition of kinases by small molecules measured in cell lysates",
+    "conformsTo": "http://mlcommons.org/croissant/1.0",
+    "creator": {
+        "@type": "sc:Organization",
+        "name": "The Library of Integrated Network-Based Cellular Signatures ",
+        "url": "https://lincsproject.org/"
+    },
+    "datePublished": "2015-04-06 00:00:00",
+    "license": "https://lincsproject.org/LINCS/data/release-policy",
+    "publisher": {
+        "@type": "sc:Organization",
+        "name": "Ma'ayan Lab",
+        "url": "https://maayanlab.cloud/"
+    },
+    "url": "https://maayanlab.cloud/Harmonizome/dataset/LINCS+Kinativ+Kinase+Inhibitor+Bioactivity+Profiles",
+    "version": "0.1.0",
+    "distribution": [
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table-archive",
+            "name": "dataset-attribute-table-archive",
+            "description": "Dataset attribute table archive from Harmonizome.",
+            "contentUrl": "https://maayanlab.cloud/static/hdfs/harmonizome/data/kinativ/gene_attribute_matrix_standardized.txt.zip",
+            "encodingFormat": "application/zip",
+            "sha256": "36a570f6ab5786ca2312f74f84372079d099a023dfc6c9af062f1ff45740e40b"
+        },
+        {
+            "@type": "cr:FileObject",
+            "@id": "dataset-attribute-table",
+            "name": "dataset-attribute-table",
+            "description": "Dataset attribute table from Harmonizome.",
+            "containedIn": {
+                "@id": "dataset-attribute-table-archive"
+            },
+            "contentUrl": "gene_attribute_matrix.txt",
+            "encodingFormat": "text/tab-separated-values"
+        }
+    ],
+    "recordSet": [
+        {
+            "@type": "cr:RecordSet",
+            "@id": "associations",
+            "name": "associations",
+            "key": {
+                "@id": "associations/gene"
+            },
+            "field": [
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/gene",
+                    "name": "gene",
+                    "description": "The NCBI gene symbol",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Text",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Gene"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/BX795_NGP",
+                    "name": "associations/BX795_NGP",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "BX795_NGP"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/CH5424802_HeLa",
+                    "name": "associations/CH5424802_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "CH5424802_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/DCC-2036_Ramos_(RA_1)",
+                    "name": "associations/DCC-2036_Ramos (RA 1)",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "DCC-2036_Ramos (RA 1)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/HG-6-64-01_A-375",
+                    "name": "associations/HG-6-64-01_A-375",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "HG-6-64-01_A-375"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Ibrutinib_Ramos_(RA_1)",
+                    "name": "associations/Ibrutinib_Ramos (RA 1)",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Ibrutinib_Ramos (RA 1)"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/JWE-035_HeLa",
+                    "name": "associations/JWE-035_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "JWE-035_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/JWE-035_PC-3",
+                    "name": "associations/JWE-035_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "JWE-035_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NPK76-II-72-1_HeLa",
+                    "name": "associations/NPK76-II-72-1_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NPK76-II-72-1_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NPK76-II-72-1_PC-3",
+                    "name": "associations/NPK76-II-72-1_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NPK76-II-72-1_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/NVP-BHG712_PC-3",
+                    "name": "associations/NVP-BHG712_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "NVP-BHG712_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/OTSSP167_MDA-MB-468",
+                    "name": "associations/OTSSP167_MDA-MB-468",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "OTSSP167_MDA-MB-468"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/QL-X-138_BCWM.1",
+                    "name": "associations/QL-X-138_BCWM.1",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "QL-X-138_BCWM.1"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Torin1_HeLa",
+                    "name": "associations/Torin1_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Torin1_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/Torin2_HeLa",
+                    "name": "associations/Torin2_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "Torin2_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD-12_HeLa",
+                    "name": "associations/XMD-12_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD-12_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD-12_PC-3",
+                    "name": "associations/XMD-12_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD-12_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD11-50_HeLa",
+                    "name": "associations/XMD11-50_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD11-50_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD11-50_PC-3",
+                    "name": "associations/XMD11-50_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD11-50_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD11-85h_HeLa",
+                    "name": "associations/XMD11-85h_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD11-85h_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD11-85h_PC-3",
+                    "name": "associations/XMD11-85h_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD11-85h_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD16-144_HeLa",
+                    "name": "associations/XMD16-144_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD16-144_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD16-144_PC-3",
+                    "name": "associations/XMD16-144_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD16-144_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD8-85_HeLa",
+                    "name": "associations/XMD8-85_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD8-85_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD8-85_PC-3",
+                    "name": "associations/XMD8-85_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD8-85_PC-3"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD8-92_HeLa",
+                    "name": "associations/XMD8-92_HeLa",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD8-92_HeLa"
+                        }
+                    }
+                },
+                {
+                    "@type": "cr:Field",
+                    "@id": "associations/XMD8-92_PC-3",
+                    "name": "associations/XMD8-92_PC-3",
+                    "cr:arrayShape": "232",
+                    "cr:isArray": true,
+                    "dataType": "sc:Float",
+                    "source": {
+                        "fileObject": {
+                            "@id": "dataset-attribute-table"
+                        },
+                        "extract": {
+                            "column": "XMD8-92_PC-3"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
