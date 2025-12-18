@@ -1,4 +1,4 @@
-# Ma'ayan Lab Croissant Scripts 🥐
+# CFDE Croissant Scripts 🥐
 
 This repository contains the template script used to create [Croissant](https://github.com/mlcommons/croissant/tree/main) metadata files for datasets from Harmonizome and the CFDE Data Portal.
 
